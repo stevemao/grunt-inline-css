@@ -17,14 +17,14 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 grunt.loadNpmTasks('grunt-inline-css');
 ```
 
-## The "inlinecss" task
+## The "inlineCss" task
 
 ### Overview
-In your project's Gruntfile, add a section named `inlinecss` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `inlineCss` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-	inlinecss: {
+	inlineCss: {
 		main: {
 			options: {
 			},
