@@ -13,12 +13,10 @@
   "bugs": {
     "url": "https://github.com/jgallen23/grunt-inline-css/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jgallen23/grunt-inline-css/blob/master/LICENSE-MIT"
-    }
-  ],
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/jgallen23/grunt-inline-css/blob/master/LICENSE-MIT"
+  }],
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
@@ -40,5 +38,6 @@
   ],
   "dependencies": {
     "juice": "~0.4.0"
-  }
+  },
+  "private": true
 }
