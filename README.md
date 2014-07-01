@@ -32,6 +32,15 @@ grunt.initConfig({
 				'out.html': 'in.html'
 			}
 		}
+
+        folder: {
+            options: {
+                extraCss: 'body { background: green; }'
+            },
+            folders: {
+                'tmp2': 'test/fixtures'
+            }
+        }
 	}
 })
 ```
