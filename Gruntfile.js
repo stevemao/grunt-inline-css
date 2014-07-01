@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 
         // Before generating any new files, remove any previously-created files.
         clean: {
-            tests: ['tmp'],
+            tests: ['tmp', 'tmp2'],
         },
 
         // Configuration to be run (and then tested).
@@ -38,6 +38,15 @@ module.exports = function (grunt) {
                     'tmp/out.html': 'test/fixtures/in.html'
                 },
             },
+
+            folder: {
+                options: {
+                    extraCss: 'body { background: green; }'
+                },
+                folders: {
+                    'tmp2': 'test/fixtures'
+                }
+            }
         },
 
         // Unit tests.

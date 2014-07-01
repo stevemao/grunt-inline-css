@@ -23,9 +23,41 @@ module.exports = function (grunt) {
     var count = this.files.length;
 
     // Iterate over all specified file groups.
-    this.files.forEach(function (file) {
-      inlinCss(file);
-    });
+    if (count === 0) {
+      var folders = this.data.folders;
+      var fs = require('fs');
+      count = 0;
+
+      for (var folderDest in folders) {
+        if (folders.hasOwnProperty(folderDest)) {
+          var folderSrc = folders[folderDest];
+          var files = fs.readdirSync(folderSrc);
+
+          count = 0;
+          for (var i = 0; i < files.length;) {
+            var fileName = files[i];
+            if (fileName[0] !== '.' && fileName.indexOf('.html') > 0) {
+              count++;
+              i++;
+            } else {
+              files.splice(i, 1);
+            }
+          }
+
+          files.forEach(function (fileName) {
+            var file = {
+              src: folderSrc + '/' + fileName,
+              dest: folderDest + '/' + fileName
+            };
+            inlinCss(file);
+          });
+        }
+      }
+    } else {
+      this.files.forEach(function (file) {
+        inlinCss(file);
+      });
+    }
 
     function inlinCss(file) {
       var filepath = file.src.toString();
